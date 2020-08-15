@@ -13,4 +13,39 @@ public class UserDialogs {
             System.out.println("Name is too short. Try again.");
         }
     }
+
+    public static String getUserSelection() {
+        Scanner scanner =new Scanner(System.in);
+        while (true){
+            System.out.println("Select calculation (A-add, S-subtract, D-divde, M-multiply):");
+            String calc = scanner.nextLine().trim().toUpperCase();
+           /* if (calc.equals("A")){
+                return "ADD";
+            }
+            else if (calc.equals("S")){
+                return "SUB";
+            }
+            else if (calc.equals("D")){
+                return "DIV";
+            }
+            else if (calc.equals("M")){
+                return "MUL";
+            }*/
+
+            switch (calc){
+                case "A" : return "ADD";
+                case "S" : return "SUB";
+                case "D" : return "DIV";
+                case "M" : return "MUL";
+            }
+            System.out.println("Wrong calculation. Try again.");
+        }
+    }
+
+    public static int getValue() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number:");
+        int val = scanner.nextInt();
+        return val;
+    }
 }
