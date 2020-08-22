@@ -2,10 +2,10 @@ package com.kodilla.basic_assertion;
 
 public class Application {
     public static void main(String[] args) {
-        Calculator calculatoradd = new Calculator();
+        Calculator calculatorAdd = new Calculator();
         int a = 5;
         int b = 8;
-        int addResult = calculatoradd.addition(a, b);
+        int addResult = calculatorAdd.addition(a, b);
         boolean correct = ResultChecker.assertEquals(13, addResult);
         if (correct) {
             System.out.println("Metoda addition działa poprawnie dla liczb " + a + " i " + b);
@@ -26,7 +26,7 @@ public class Application {
 
         Calculator calculatorExponentiation = new Calculator();
         int e = 5;
-        int exponentiationResult = calculatorExponentiation.exponentiation( e );
+        int exponentiationResult = calculatorExponentiation.power( e );
         boolean correectExponentiation = ResultChecker.assertEquals( 25,exponentiationResult );
         if (correectExponentiation){
             System.out.println("Metoda exponentiation działa poprawnie dla liczby " + e );

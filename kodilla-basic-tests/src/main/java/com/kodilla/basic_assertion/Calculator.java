@@ -12,7 +12,7 @@ public class Calculator {
 
     }
 
-    public int exponentiation (int e){
+    public int power(int e){
         return e * e;
     }
 }
