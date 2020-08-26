@@ -18,7 +18,7 @@ public class Vw implements Car{
 
     @Override
     public void  increaseSpeed() {
-        int increaseSpeed = 0;
+        int increaseSpeed = 7;
         for (int i = 0; i < speedVw; i++){
 
             increaseSpeed++;
@@ -30,7 +30,7 @@ public class Vw implements Car{
 
     @Override
     public void decreaseSpeed() {
-        int decreaseSpeed  = speedVw;
+        int decreaseSpeed  = 5;
         for (int i = 0; i < decreaseSpeed; i++){
 
             decreaseSpeed--;
