@@ -1,8 +1,6 @@
 package com.kodilla.collections.interfaces.homework;
 
-import com.kodilla.collections.interfaces.Circle;
-import com.kodilla.collections.interfaces.Square;
-import com.kodilla.collections.interfaces.Triangle;
+
 
 public class CarUtils {
     public static void describeCar(Car car){
