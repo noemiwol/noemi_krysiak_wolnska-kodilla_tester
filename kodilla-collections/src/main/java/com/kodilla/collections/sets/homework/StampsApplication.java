@@ -18,6 +18,7 @@ public class StampsApplication {
 
         System.out.println(stamps.size());
         for (Stamp stamp:stamps) {
+
             System.out.println(stamp);
 
         }
