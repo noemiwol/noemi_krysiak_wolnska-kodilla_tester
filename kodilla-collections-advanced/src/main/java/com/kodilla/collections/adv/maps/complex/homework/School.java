@@ -7,7 +7,17 @@ import java.util.Objects;
 public class School {
     private String schoolName;
     private int numberOfStudents;
+    List<Integer> students = new ArrayList<>();
 
+    public School(String schoolName, int numberOfStudents) {
+        this.schoolName = schoolName;
+        this.numberOfStudents = numberOfStudents;
+    }
+
+    public School(int... students){
+        for (int student: students)
+            this.students.add( student );
+    }
 
     public String getSchoolName() {
         return schoolName;
@@ -31,31 +41,11 @@ public class School {
         return Objects.hash( schoolName, numberOfStudents );
     }
 
-
-
-    public School(String schoolName, int numberOfStudents) {
-        this.schoolName = schoolName;
-        this.numberOfStudents = numberOfStudents;
-    }
-
-    public School(Integer... students){
-        for (Integer student: students)
-            this.students.add( student );
-    }
-
-
     @Override
     public String toString() {
         return "School{" +
                 "students=" + students +
                 '}';
-    }
-
-    List<Integer>students = new ArrayList<>();
-
-    public School(int... students){
-        for (int student: students)
-            this.students.add( student );
     }
 
 }

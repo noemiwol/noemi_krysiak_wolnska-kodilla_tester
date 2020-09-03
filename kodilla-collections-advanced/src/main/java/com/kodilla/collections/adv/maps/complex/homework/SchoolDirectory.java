@@ -20,7 +20,7 @@ public class SchoolDirectory {
 
         for (Map.Entry<Principal, School>principalSchoolEntry: listOfPrincipal.entrySet()){
             System.out.println(principalSchoolEntry.getKey().getFirstname() + " "+principalSchoolEntry.getKey().getLastname() + " dane dotyczące szkoły, którą zarządza " +
-                    principalSchoolEntry.getValue().getSchoolName() + " " +principalSchoolEntry.getValue().getNumberOfStudents());
+                    principalSchoolEntry.getValue().getSchoolName() + " ma " +principalSchoolEntry.getValue().getNumberOfStudents()+ " uczniów.");
         }
 
 
