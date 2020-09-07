@@ -14,10 +14,11 @@ public class BookManagerTestSuite {
     public void addressesOfTheCreatedObjectsAreTheSame_createBook(){
         //given
         BookManager bookManager = new BookManager();
-        Book book1 = bookManager.createBook( "Żywiec", "Jan kowalski" );
-        Book book2 = bookManager.createBook( "Trolli", "Edyta Maślak" );
+
 
         //when
+        Book book1 = bookManager.createBook( "Żywiec", "Jan kowalski" );
+        Book book2 = bookManager.createBook( "Trolli", "Edyta Maślak" );
 
         //then
         assertNotEquals( book1, book2 );
@@ -28,13 +29,14 @@ public class BookManagerTestSuite {
     public void isTwoObjectWithTheSameReference_createBook(){
         //given
         BookManager bookManager = new BookManager();
+
+
+        //when
         Book book1 = bookManager.createBook( "Trolli", "Edyta Maślak" );
         Book book2 = bookManager.createBook( "Trolli", "Edyta Maślak" );
 
-        //when
-
         //then
-        assertTrue( book1 == book2 );
+        assertSame( book1, book2 );
 
     }
 
