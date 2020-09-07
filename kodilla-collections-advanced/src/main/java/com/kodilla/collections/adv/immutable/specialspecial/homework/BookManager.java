@@ -6,7 +6,7 @@ public class BookManager  {
     public  Book createBook(String title, String author){
 
         for (Book book: bookArrayList){
-            if (title == book.getTitle() && author == book.getAuthor())
+            if (title. equals(book.getTitle()  ) && author.equals( book.getAuthor() ) )
             {
                 return book;
             }
