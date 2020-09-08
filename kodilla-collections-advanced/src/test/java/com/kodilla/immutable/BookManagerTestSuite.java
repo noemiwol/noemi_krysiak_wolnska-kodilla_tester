@@ -3,7 +3,8 @@ package com.kodilla.immutable;
 
 import com.kodilla.collections.adv.immutable.specialspecial.homework.Book;
 import com.kodilla.collections.adv.immutable.specialspecial.homework.BookManager;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
