@@ -3,7 +3,7 @@ package com.kodilla.collections.adv.exercises.dictionary;
 import java.util.*;
 
 public class Dictionary {
-    Map<String , List<EnglishWord>> dictionary = new HashMap<>();
+    final Map<String, List<EnglishWord>> dictionary = new HashMap<>();
 
     public void addWord(String polishWord, EnglishWord englishWord){
         List<EnglishWord> englishWords = dictionary.getOrDefault(polishWord, new ArrayList<>());
@@ -11,7 +11,7 @@ public class Dictionary {
         dictionary.put(polishWord, englishWords);
     }
 
-    public List<EnglishWord> findEnglishWord (String polishWord){
+    public  List<EnglishWord> findEnglishWord (String polishWord){
         return dictionary.getOrDefault(polishWord, Collections.emptyList());
     }
 
