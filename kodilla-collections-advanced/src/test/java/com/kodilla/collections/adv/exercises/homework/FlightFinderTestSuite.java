@@ -3,7 +3,9 @@ package com.kodilla.collections.adv.exercises.homework;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,18 +13,26 @@ class FlightFinderTestSuite {
     @Test
     public void findFlightsFrom(){
         //given
-        FlightFinder flightFinder = new FlightFinder();
-        flightFinder.addFlightFrom("Warszawa", new Flight("Warszawa", "Gdansk"));
-        flightFinder.addFlightFrom("Gdansk",  new Flight("Gdansk", "Warszawa"));
-        flightFinder.addFlightFrom("Warszawa",  new Flight("Warszawa", "Berlin"));
+        Map<String, List<Flight>> departures = new HashMap<>();
+        List<Flight> krakowDepartures = new ArrayList<>();
+        krakowDepartures.add(new Flight("Krakow", "Warszawa"));
+        krakowDepartures.add(new Flight("Krakow", "Poznan"));
+        departures.put("Krakow", krakowDepartures);
 
+        Map<String, List<Flight>> arrivals = new HashMap<>();
+        List<Flight> warszawaArrivals = new ArrayList<>();
+        warszawaArrivals.add(new Flight("Krakow", "Warszawa"));
+        warszawaArrivals.add(new Flight("Poznan", "Warszawa"));
+        arrivals.put("Warszawa", warszawaArrivals);
+
+        FlightFinder flightFinder = new FlightFinder(departures, arrivals);
         //when
-        List<Flight> result = flightFinder.findFlightsFrom("Warszawa");
+        List<Flight> result = flightFinder.findFlightsFrom("Krakow");
 
         //then
         List<Flight> expectedList = new ArrayList<>();
-        expectedList.add(new Flight("Warszawa", "Gdansk"));
-        expectedList.add(new Flight("Warszawa","Berlin"));
+        expectedList.add(new Flight("Krakow", "Warszawa"));
+        expectedList.add(new Flight("Krakow","Poznan"));
         assertEquals(expectedList,result);
 
     }
@@ -30,17 +40,27 @@ class FlightFinderTestSuite {
     @Test
     public void findFlightsTo(){
         //given
-        FlightFinder flightFinder = new FlightFinder();
-        flightFinder.addFlightTo("Gdansk", new Flight("Warszawa", "Gdansk"));
-        flightFinder.addFlightTo("Warszawa",  new Flight("Gdansk", "Warszawa"));
-        flightFinder.addFlightTo("Berlin",  new Flight("Warszawa", "Berlin"));
+        Map<String, List<Flight>> arrivals = new HashMap<>();
+        List<Flight> warszawaArrivals = new ArrayList<>();
+        warszawaArrivals.add(new Flight("Krakow", "Warszawa"));
+        warszawaArrivals.add(new Flight("Poznan", "Warszawa"));
+        arrivals.put("Warszawa", warszawaArrivals);
+
+        Map<String, List<Flight>> departures = new HashMap<>();
+        List<Flight> krakowDepartures = new ArrayList<>();
+        krakowDepartures.add(new Flight("Krakow", "Warszawa"));
+        krakowDepartures.add(new Flight("Krakow", "Poznan"));
+        departures.put("Krakow", krakowDepartures);
+        FlightFinder flightFinder = new FlightFinder(departures, arrivals);
+
 
         //when
-        List<Flight> result = flightFinder.findFlightsTo("Berlin");
+        List<Flight> result = flightFinder.findFlightsTo("Warszawa");
 
         //then
         List<Flight> expectedList = new ArrayList<>();
-        expectedList.add(new Flight("Warszawa", "Berlin"));
+        expectedList.add(new Flight("Krakow", "Warszawa"));
+        expectedList.add(new Flight("Poznan", "Warszawa"));
         assertEquals(expectedList,result);
 
 

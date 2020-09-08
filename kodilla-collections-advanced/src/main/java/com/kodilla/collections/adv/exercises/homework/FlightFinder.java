@@ -4,26 +4,29 @@ package com.kodilla.collections.adv.exercises.homework;
 import java.util.*;
 
 public class FlightFinder {
-    Map<String, List<Flight>> flightRepository = new HashMap<>();
+    private Map<String, List<Flight>> flightDeparture;
+    private Map<String, List<Flight>> flightArrival;
 
-    public void addFlightFrom(String departure, Flight flight){
-        List<Flight> flights = flightRepository.getOrDefault(departure, new ArrayList<>());
-        flights.add(flight);
-        flightRepository.put(departure, flights);
+    public FlightFinder(Map<String, List<Flight>> flightDeparture, Map<String, List<Flight>> flightArrival) {
+        this.flightDeparture = flightDeparture;
+        this.flightArrival = flightArrival;
     }
-    public void addFlightTo(String arrival, Flight flight){
-        List<Flight> flights = flightRepository.getOrDefault(arrival, new ArrayList<>());
-        flights.add(flight);
-        flightRepository.put(arrival, flights);
-    }
+
+    /*
+            * Zgodnie z opisem zadania klasy:
+
+            public List<Flight> findFlightsFrom(String departure)
+            public List<Flight> findFlightsTo(String arrival)
+            */
 
 
     public List<Flight> findFlightsFrom(String departure){
-        return flightRepository.getOrDefault(departure, Collections.emptyList());
+        return flightDeparture.get(departure);
 
     }
     public List<Flight> findFlightsTo(String arrival){
-        return flightRepository.getOrDefault(arrival, Collections.emptyList());
+        return flightArrival.get(arrival);
 
     }
+
 }
