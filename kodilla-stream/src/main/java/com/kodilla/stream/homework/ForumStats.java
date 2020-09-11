@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class ForumStats {
     public static void main(String[] args) {
+
         double averagePost = UsersRepository.getUsersList()
                 .stream()
                 .filter(u -> u.getAge() >= 40 )
