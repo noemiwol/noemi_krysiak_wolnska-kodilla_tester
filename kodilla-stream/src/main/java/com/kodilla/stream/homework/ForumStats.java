@@ -9,13 +9,6 @@ import java.util.stream.Collectors;
 
 public class ForumStats {
     public static void main(String[] args) {
-
-      /*Napisz Stream tak, aby obliczył średnią liczbę postów dla użytkowników,
-    których wiek jest >= 40.
-
-    Napisz kolejny Stream, który obliczy średnią liczbę postów dla użytkowników,
-    których wiek jest < 40.*/
-
         double averagePost = UsersRepository.getUsersList()
                 .stream()
                 .filter(u -> u.getAge() >= 40 )
