@@ -19,7 +19,7 @@ public class AirportRepositoryTestSuite {
     }
 
     @Test
-    public void testInAirportInUse_withException() throws AirportNotFoundException{
+    public void testInAirportInUse_withException() {
         //given
         AirportRepository airportRepository = new AirportRepository();
 

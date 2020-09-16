@@ -10,7 +10,7 @@ public static void main(String[] args) {
     try {
         System.out.println(warehouse.getOrder("3") + " znajduje się na magazynie " );
         System.out.println(warehouse.getOrder("5") + " znajduje się na magazynie " );
-    } catch (OrderDoesntExistExceptio orderDoesntExistExceptio) {
+    } catch (OrderDoesntExistException orderDoesntExistException) {
         System.out.println("Podane zamównie nieistnieje. Sprawdź pononwnie");
 
     }
