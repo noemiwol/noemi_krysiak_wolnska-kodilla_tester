@@ -1,0 +1,4 @@
+userNumbers:isValid
+11,2,49,50,17,3:true
+1,29,37,16,10:false
+1,7,12,49,5,0:false

@@ -15,4 +15,6 @@ class StringValidatorTestSuite {
         System.out.println("|" + text + "|");
         assertTrue(validator.isBlank(text));
     }
+
+
 }
