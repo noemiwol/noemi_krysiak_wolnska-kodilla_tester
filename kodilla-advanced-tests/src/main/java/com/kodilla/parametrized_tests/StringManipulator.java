@@ -15,4 +15,6 @@ public class StringManipulator {
         int count = text.length() - text.replace(",", "").length();
         return count;
     }
+
+
 }
