@@ -1,9 +1,9 @@
-package com.kodilla.execution_model.homework;
+    package com.kodilla.execution_model.homework;
 
-import java.time.LocalDate;
-import java.util.Objects;
+    import java.time.LocalDate;
+    import java.util.Objects;
 
-public class Order {
+    public class Order {
     private double orderValue;
     private LocalDate data;
     private String login;
@@ -49,4 +49,4 @@ public class Order {
     public int hashCode() {
         return Objects.hash(getOrderValue(), getData(), getLogin());
     }
-}
+    }

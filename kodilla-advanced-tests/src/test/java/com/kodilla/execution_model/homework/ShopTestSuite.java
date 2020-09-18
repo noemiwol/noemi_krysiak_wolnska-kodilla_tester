@@ -1,13 +1,13 @@
-package com.kodilla.execution_model.homework;
+    package com.kodilla.execution_model.homework;
 
-import org.junit.jupiter.api.*;
+    import org.junit.jupiter.api.*;
 
-import java.time.LocalDate;
-import java.util.Set;
+    import java.time.LocalDate;
+    import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+    import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ShopTestSuite {
+    class ShopTestSuite {
     Shop shop = new Shop();
     Order order1 = new Order(145.50, LocalDate.of(2020,8,18),"ksylon");
     Order order2 = new Order(99.99, LocalDate.of(2020,9,16),"nill");
@@ -75,4 +75,4 @@ class ShopTestSuite {
         System.out.println("Finishing testing");
     }
 
-}
+    }
