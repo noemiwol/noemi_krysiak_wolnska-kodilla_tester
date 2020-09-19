@@ -26,7 +26,7 @@ import org.mockito.Mockito;
             serviceAboutWeatherHazards.addingToListOfNotificationsReceivingFromTheWebsite(client);
 
             serviceAboutWeatherHazards.sendingNotification(notification);
-            Mockito.verify(client, Mockito.times(1)).wysylaniePowiadomien(notification);
+            Mockito.verify(client, Mockito.times(1)).sendNotification(notification);
 
         }
         @Test
@@ -115,7 +115,7 @@ import org.mockito.Mockito;
 
                 serviceAboutWeatherHazards.withdrawalNotification(client);
                 serviceAboutWeatherHazards.sendingNotification(notification);
-                Mockito.verify(client, Mockito.never()).wysylaniePowiadomien(notification);
+                Mockito.verify(client, Mockito.never()).sendNotification(notification);
 
             }
 

@@ -38,7 +38,7 @@ public class ServiceAboutWeatherHazards {
     }
 
     public void sendingNotification(Notification notification) {
-        this.subscriber.forEach(client -> client.wysylaniePowiadomien(notification));
+        this.subscriber.forEach(client -> client.sendNotification(notification));
     }
 
     public void sendingSubscription(String location, Alert alert) {
