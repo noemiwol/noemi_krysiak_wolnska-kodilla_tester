@@ -1,80 +1,123 @@
         package com.kodilla.mockito.homework;
 
         import org.junit.jupiter.api.Test;
-        import org.mockito.Mockito;
+import org.mockito.Mockito;
 
-        import static org.mockito.Mockito.*;
 
         class ServiceAboutWeatherHazardsTest{
-        @Test
-        public void addLocation() {
-            ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
-            Client client = mock(Client.class);
-            Client client1 = mock(Client.class);
-            serviceAboutWeatherHazards.addLocation("Warszawa", client1);
-            Mockito.verify(client);
-        }
 
         @Test
-        public void oneClientTreeLocationSendNotification() {
+        public void addClients() {
             ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
-            Notification notification = mock(Notification.class);
-            Client client1 = mock(Client.class);
-            serviceAboutWeatherHazards.addLocation("Warszawa", client1);
-            serviceAboutWeatherHazards.addLocation("Kraków", client1);
-            serviceAboutWeatherHazards.addLocation("Poznań", client1);
+            Client client = Mockito.mock(Client.class);
+            serviceAboutWeatherHazards.addLocation("Warszawa");
+            serviceAboutWeatherHazards.addClients("Warszawa", client);
+            Alert alert = Mockito.mock(Alert.class);
 
-            serviceAboutWeatherHazards.sendNotification(notification);
-            Mockito.verify(client1, times(3)).getReceive(notification);
-        }
+            serviceAboutWeatherHazards.sendingSubscription("Warszawa",alert);
+            Mockito.verify(client,Mockito.times(1)).sendAlert(alert);
 
-
-        @Test
-        void removeOneSubscriberLocation() {
-            ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
-            Client client = mock(Client.class);
-            Notification notification = mock(Notification.class);
-            Client client1 = mock(Client.class);
-            serviceAboutWeatherHazards.addLocation("Warszawa", client1);
-            serviceAboutWeatherHazards.addLocation("Warszawa",client);
-            serviceAboutWeatherHazards.removeOneSubscriberLocation("Warszawa");
-
-            serviceAboutWeatherHazards.sendNotification(notification);
-            Mockito.verify(client, never()).getReceive(notification);
-        }
-
-        @Test
-        void treeClientOneLocationRemoveAllSubscriberLocation() {
-            ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
-            Notification notification = mock(Notification.class);
-            Client client1 = mock(Client.class);
-            Client client2 = mock(Client.class);
-            Client client3 = mock(Client.class);
-            serviceAboutWeatherHazards.addLocation("Warszawa",client1);
-            serviceAboutWeatherHazards.addLocation("Warszawa",client2);
-            serviceAboutWeatherHazards.addLocation("Warszawa",client3);
-            serviceAboutWeatherHazards.removeAllSubscriberLocation("Warszawa",client1);
-            serviceAboutWeatherHazards.removeAllSubscriberLocation("Warszawa",client2);
-            serviceAboutWeatherHazards.removeAllSubscriberLocation("Warszawa",client3);
-
-            serviceAboutWeatherHazards.sendNotification(notification);
-            Mockito.verify(client1, never()).getReceive(notification);
-            Mockito.verify(client2, never()).getReceive(notification);
-            Mockito.verify(client3, never()).getReceive(notification);
         }
         @Test
-        public void oneClientTreeLocationRemoveAllSubscriberLocation() {
+            public void oneClientSendNotification(){
             ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
-            Notification notification = mock(Notification.class);
-            Client client1 = mock(Client.class);
-            serviceAboutWeatherHazards.addLocation("Warszawa", client1);
-            serviceAboutWeatherHazards.addLocation("Kraków", client1);
-            serviceAboutWeatherHazards.addLocation("Poznań", client1);
-            serviceAboutWeatherHazards.removeAllSubscriberLocation("Warszawa",client1);
-            serviceAboutWeatherHazards.removeAllSubscriberLocation("Kraków",client1);
-            serviceAboutWeatherHazards.removeAllSubscriberLocation("Poznań",client1);;
+            Client client = Mockito.mock(Client.class);
+            Notification notification = Mockito.mock(Notification.class);
+            serviceAboutWeatherHazards.addingToListOfNotificationsReceivingFromTheWebsite(client);
 
-            serviceAboutWeatherHazards.sendNotification(notification);
-            Mockito.verify(client1, never()).getReceive(notification);
+            serviceAboutWeatherHazards.sendingNotification(notification);
+            Mockito.verify(client, Mockito.times(1)).wysylaniePowiadomien(notification);
+
         }
+        @Test
+            public void oneClientTwoLocationSendAlert(){
+            ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
+            Client client = Mockito.mock(Client.class);
+            serviceAboutWeatherHazards.addLocation("Warszawa");
+            serviceAboutWeatherHazards.addLocation("Kraków");
+            serviceAboutWeatherHazards.addClients("Kraków", client);
+            serviceAboutWeatherHazards.addClients("Warszawa", client);
+            Alert alert = Mockito.mock(Alert.class);
+
+            serviceAboutWeatherHazards.sendingSubscription("Kraków",alert);
+            serviceAboutWeatherHazards.sendingSubscription("Warszawa",alert);
+            Mockito.verify(client, Mockito.times(2)).sendAlert(alert);
+        }
+            @Test
+            public void twoClientOneLocationSendAlert() {
+                ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
+                Client clientFirst = Mockito.mock(Client.class);
+                Client clientSecond = Mockito.mock(Client.class);
+                serviceAboutWeatherHazards.addLocation("Warszawa");
+                serviceAboutWeatherHazards.addClients("Warszawa", clientFirst);
+                serviceAboutWeatherHazards.addClients("Warszawa", clientSecond);
+                Alert alert = Mockito.mock(Alert.class);
+
+
+                serviceAboutWeatherHazards.sendingSubscription("Warszawa", alert);
+                Mockito.verify(clientFirst, Mockito.times(1)).sendAlert(alert);
+                Mockito.verify(clientSecond, Mockito.times(1)).sendAlert(alert);
+            }
+           @Test
+            public void removalLocation(){
+                ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
+                serviceAboutWeatherHazards.addLocation("Warszawa");
+                Client client = Mockito.mock(Client.class);
+                Alert alert = Mockito.mock(Alert.class);
+
+                serviceAboutWeatherHazards.locationRemoval("Warszawa");
+                serviceAboutWeatherHazards.sendingSubscription("Warszawa",alert);
+                Mockito.verify(client, Mockito.never()).sendAlert(alert);
+
+
+
+            }
+
+                @Test
+                public void oneClientTwoLocationSubscriptionWithdrawalAll(){
+                    ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
+                    Client client = Mockito.mock(Client.class);
+                    Alert alert = Mockito.mock(Alert.class);
+                    serviceAboutWeatherHazards.addLocation("Warszawa");
+                    serviceAboutWeatherHazards.addLocation("Kraków");
+                    serviceAboutWeatherHazards.addClients("Kraków", client);
+                    serviceAboutWeatherHazards.addClients("Warszawa", client);
+
+                    serviceAboutWeatherHazards.withdrawalAllSubscriptions(client);
+                    serviceAboutWeatherHazards.sendingSubscription("Kraków",alert);
+                    serviceAboutWeatherHazards.sendingSubscription("Warszawa",alert);
+                    Mockito.verify(client, Mockito.never()).sendAlert(alert);
+                }
+            @Test
+            public void TwoClientOneLocationSubscriptionWithdrawal(){
+                ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
+                Client clientFirst = Mockito.mock(Client.class);
+                Client clientSecond = Mockito.mock(Client.class);
+                Alert alert = Mockito.mock(Alert.class);
+                serviceAboutWeatherHazards.addLocation("Warszawa");
+                serviceAboutWeatherHazards.addClients("Warszawa", clientFirst);
+                serviceAboutWeatherHazards.addClients("Warszawa", clientSecond);
+
+
+                serviceAboutWeatherHazards.withdrawalubscription("Warszawa", clientFirst);
+                serviceAboutWeatherHazards.withdrawalubscription("Warszawa", clientSecond);
+                serviceAboutWeatherHazards.sendingSubscription("Warszawa", alert);
+                Mockito.verify(clientFirst, Mockito.never()).sendAlert(alert);
+                Mockito.verify(clientSecond, Mockito.never()).sendAlert(alert);
+            }
+
+            @Test
+            public void notificationsWithdrawal(){
+                ServiceAboutWeatherHazards serviceAboutWeatherHazards = new ServiceAboutWeatherHazards();
+                Client client = Mockito.mock(Client.class);
+                Notification notification = Mockito.mock(Notification.class);
+                serviceAboutWeatherHazards.addingToListOfNotificationsReceivingFromTheWebsite(client);
+
+                serviceAboutWeatherHazards.withdrawalNotification(client);
+                serviceAboutWeatherHazards.sendingNotification(notification);
+                Mockito.verify(client, Mockito.never()).wysylaniePowiadomien(notification);
+
+            }
+
+
         }

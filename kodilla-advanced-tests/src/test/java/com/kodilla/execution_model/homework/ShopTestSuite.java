@@ -1,10 +1,8 @@
     package com.kodilla.execution_model.homework;
 
     import org.junit.jupiter.api.*;
-
     import java.time.LocalDate;
     import java.util.Set;
-
     import static org.junit.jupiter.api.Assertions.assertEquals;
 
     class ShopTestSuite {
