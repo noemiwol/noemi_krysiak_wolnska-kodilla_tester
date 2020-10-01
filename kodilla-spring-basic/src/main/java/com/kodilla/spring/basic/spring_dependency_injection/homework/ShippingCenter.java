@@ -8,8 +8,9 @@ import javax.annotation.Resource;
 @Component
 public class ShippingCenter {
 
-    @Autowired
+
     private final DeliveryService deliveryService;
+    @Autowired
     private final NotificationService notificationService;
 
     public ShippingCenter(DeliveryService deliveryService, NotificationService notificationService) {
