@@ -19,6 +19,7 @@ public class AnimalFactory {
         int chosen = generator.nextInt(3);
         if (chosen == 0) {
             animal = new Dog();
+
         } else if (chosen == 1) {
             animal = new Cat();
         } else {
