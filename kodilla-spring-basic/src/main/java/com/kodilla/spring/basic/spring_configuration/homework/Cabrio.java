@@ -1,18 +1,15 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
-
-
-
 public class Cabrio implements Car {
-    private boolean _areLightsTurnedOn;
+    private boolean areLightsIsOn;
 
     public Cabrio(boolean areLightsTurnedOn) {
-        _areLightsTurnedOn = areLightsTurnedOn;
+        areLightsIsOn = areLightsTurnedOn;
     }
 
     @Override
     public boolean hasHeadlightsTurnedOn() {
-        return _areLightsTurnedOn;
+        return areLightsIsOn;
     }
 
     @Override
