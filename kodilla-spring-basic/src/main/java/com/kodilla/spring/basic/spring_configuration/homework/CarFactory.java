@@ -31,7 +31,5 @@ public class CarFactory {
         }else {
             return null;
         }
-
     }
-
 }

@@ -9,8 +9,7 @@ import java.time.LocalTime;
 
 @SpringBootTest
 class CarFactoryTest {
-
- @Test
+    @Test
     public void shouldCreateSedanWithLightsOnCarCreate(){
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
