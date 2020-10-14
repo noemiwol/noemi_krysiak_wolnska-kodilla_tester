@@ -1,4 +1,4 @@
-package domain;
+package com.kodilla.rest.domain;
 
 import java.util.Objects;
 
