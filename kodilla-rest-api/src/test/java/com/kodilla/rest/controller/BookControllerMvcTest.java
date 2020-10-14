@@ -14,10 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(BookController.class)
@@ -30,7 +28,7 @@ public class BookControllerMvcTest {
     private BookService bookService;
 
     @Test
-   public void shouldFetchBooks() throws Exception{
+    public void shouldFetchBooks() throws Exception{
         //given
         List<BookDto> bookList = new ArrayList<>();
         bookList.add(new BookDto("Title 1", "Author 1"));
@@ -40,7 +38,5 @@ public class BookControllerMvcTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/books").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
-
     }
-
 }
