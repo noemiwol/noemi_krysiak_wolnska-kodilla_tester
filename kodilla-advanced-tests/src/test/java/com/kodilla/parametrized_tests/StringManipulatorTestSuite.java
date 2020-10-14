@@ -10,13 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StringManipulatorTestSuite {
     private StringManipulator manipulator = new StringManipulator();
 
-
-   /* @ParameterizedTest
-    @CsvSource(value = {"test,tset", "OtHEr,rehto", "EVent,tneve", "null,llun", "A,a"})
-    public void shouldReverseStringWithLowerCase(String input, String expected) {
-        assertEquals(expected, manipulator.reverseWithLowerCase(input));
-    }*/
-
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.StringSources#provideStringsForTestingLength")
     public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
