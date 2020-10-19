@@ -67,9 +67,6 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-  compile('javax.xml.bind:jaxb-api:2.3.0')
-  compile('javax.activation:activation:1.1')
-  compile('org.glassfish.jaxb:jaxb-runtime:2.3.0')
   compile("org.springframework.boot:spring-boot-starter-web-services")
   testCompile("org.springframework.boot:spring-boot-starter-test")
   compile("wsdl4j:wsdl4j:1.6.1")
