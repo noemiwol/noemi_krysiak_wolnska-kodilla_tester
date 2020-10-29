@@ -13,6 +13,15 @@ public class GoogleExample {
         System.setProperty("webdriver.chrome.driver", "c:/selenium-drivers/chrome/chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://www.google.com");
+        webDriver.switchTo().frame(0);
+
+
+        WebDriverWait wait = new WebDriverWait(webDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("yDmH0d")));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("introAgreeButton")));
+        webDriver.findElement(By.id("introAgreeButton")).click();
+
 
         WebElement inputField = (WebElement) webDriver.findElements(By.name("q"));
         inputField.sendKeys("kodilla");
