@@ -13,6 +13,8 @@ public class AllegroTestingApp {
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium-drivers\\Chrome\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://allegro.pl/");
+        Alert alert = webDriver.switchTo().alert();
+        alert.accept();
         webDriver.switchTo().frame(0);
 
         WebDriverWait wait = new WebDriverWait(webDriver, 10);
@@ -27,8 +29,7 @@ public class AllegroTestingApp {
         inputField.sendKeys("Elektronika")*/
 
 
-        Alert alert = webDriver.switchTo().alert();
-        alert.accept();
+
 
     }
 }
