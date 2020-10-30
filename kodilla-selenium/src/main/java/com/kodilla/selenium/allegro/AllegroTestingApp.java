@@ -11,15 +11,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AllegroTestingApp {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium-drivers\\Chrome\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://allegro.pl/");
+        WebDriver webDriver = new ChromeDriver();
+        webDriver.get("https://allegro.pl/");
+        webDriver.switchTo().frame(0);
 
-        WebElement inputField = driver.findElement(By.xpath("//*[@id=\"allegro.metrumHeader.search\"]/div/form/input"));
+        WebDriverWait wait = new WebDriverWait(webDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[2]/div[5]")));
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[2]/div[8]/div/div[2]/div/div[2]/button[2]")));
+        webDriver.findElement(By.xpath("//html/body/div[2]/div[8]/div/div[2]/div/div[2]/button[2]")).click();
+
+        WebElement inputField = webDriver.findElement(By.xpath("//html/body/div[2]/div[2]/header/div/div/div/div/form/input"));
         inputField.sendKeys("Mavic mini");
-        inputField = driver.findElement(By.xpath("//*[@id=\"allegro.metrumHeader.search\"]/div/form/input/div/div/span"));
-        inputField.sendKeys("Elektronika");
+        /*inputField = driver.findElement(By.xpath("//*[@id=/'allegro.metrumHeader.search/']/div/form/input/div/div/span"));
+        inputField.sendKeys("Elektronika")*/
 
-        Alert alert = driver.switchTo().alert();
+
+        Alert alert = webDriver.switchTo().alert();
         alert.accept();
+
     }
 }
