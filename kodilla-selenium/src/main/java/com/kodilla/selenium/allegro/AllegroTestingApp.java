@@ -8,25 +8,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class AllegroTestingApp {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium-drivers\\Chrome\\chromedriver.exe");
         WebDriver webDriver = new ChromeDriver();
         webDriver.get("https://allegro.pl/");
-        Alert alert = webDriver.switchTo().alert();
-        alert.accept();
+        new WebDriverWait(webDriver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector("img[alt='zamknij']"))).click();
 
-       /*
-        webDriver.switchTo().frame(0);
-        WebDriverWait wait = new WebDriverWait(webDriver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[2]/div[5]")));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[2]/div[8]/div/div[2]/div/div[2]/button[2]")));
-        webDriver.findElement(By.xpath("//html/body/div[2]/div[8]/div/div[2]/div/div[2]/button[2]")).click();*/
 
-        WebElement inputField = webDriver.findElement(By.xpath("//html/body/div[2]/div[2]/header/div/div/div/div/form/input"));
+        WebElement inputField = webDriver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(2) > header > div > div > div > div > form > input"));
         inputField.sendKeys("Mavic mini");
-        /*inputField = driver.findElement(By.xpath("//*[@id=/'allegro.metrumHeader.search/']/div/form/input/div/div/span"));
-        inputField.sendKeys("Elektronika")*/
+        webDriver.findElement(By.cssSelector("body > div.main-wrapper > div:nth-child(2) > header > div > div > div > div > form > button")).click();
+
+        WebDriverWait wait = new WebDriverWait(webDriver, 5);
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("body > div.main-wrapper > div:nth-child(4) > div > div > div > div > div > div._1yyhi._e219d_1fdR2 > div._3kk7b._otc6c._19orx._e219d_HGZ31 > div:nth-child(3) > div:nth-child(1) > div")));
+
+
+        List<WebElement> searchResults = webDriver.findElements(By.cssSelector("body > div.main-wrapper > div:nth-child(4) > div > div > div > div > div > div._1yyhi._e219d_1fdR2 > div._3kk7b._otc6c._19orx._e219d_HGZ31 > div:nth-child(3) > div:nth-child(1) > div"));
+        for (WebElement webElement : searchResults){
+            System.out.println(webElement.getText());
+        }
 
 
 
