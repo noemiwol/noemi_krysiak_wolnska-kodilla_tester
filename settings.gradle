@@ -10,4 +10,5 @@ include 'kodilla-rest-api'
 include 'kodilla-soap'
 include 'kodilla-soap'
 include 'kodilla-selenium'
+include 'kodilla-google-selenium'
 
