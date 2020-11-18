@@ -22,9 +22,9 @@ class GoogleSearchTest {
         driver.close();
     }
 
-    @Test
+   /* @Test
     public void testGooglePage() {
         GoogleSearch googleSearch = new GoogleSearch(driver);
         googleSearch.searchResults();
-    }
+    }*/
 }
