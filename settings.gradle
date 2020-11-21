@@ -14,4 +14,8 @@ include 'kodilla-google-selenium'
 include 'kodilla-cucumber'
 include 'kodilla-code-coverage'
 include 'kodilla-testcontainers'
+include 'kodilla-final-project'
+include 'kodilla-final-project-selenium-test'
+include 'kodilla-final-project-REST-Api-test'
+include 'kodilla-final-project-REST-Api-test'
 
