@@ -1,0 +1,304 @@
+{
+  "info": {
+    "_postman_id": "9f3ddc74-03e6-4d5a-99a1-1c8ee62e25d2",
+    "name": "Ta Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getItems",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/items/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "items",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createItem",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/items/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "items",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateItem",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/items/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "items",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteItem",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/items/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "items",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getTitles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/titles/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "titles",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createTitle",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/titles/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "titles",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateTitle",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/titles/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "titles",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTitle",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/titles/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "titles",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getRent",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createRent",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateRent",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteRent",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/rents/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "rents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/user/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "user",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://ta-ebookrental-be.herokuapp.com/user/",
+          "protocol": "https",
+          "host": [
+            "ta-ebookrental-be",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "user",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
