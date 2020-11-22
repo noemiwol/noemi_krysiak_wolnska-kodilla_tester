@@ -55,5 +55,6 @@ class RentsController {
     if (!user.isPresent())
       throw new Exception("User " + userId + " doesn't exist.");
     return rentService.deleteRent(user.get(), id);
+
   }
 }
